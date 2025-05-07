@@ -25,9 +25,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="fixed top-4 right-4">
+          <header className="w-full flex items-center justify-between px-6 py-4 border-b bg-background/80 backdrop-blur-md sticky top-0 z-50">
+            <h1 className="text-xl font-bold">Volodymyr's Personal Website</h1>
             <ThemeToggle />
-          </div>
+          </header>
           {children}
         </ThemeProvider>
       </body>
