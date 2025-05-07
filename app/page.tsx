@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, Headphones, Camera, Zap, Github, Linkedin, Mail, ArrowRight } from "lucide-react"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -87,7 +89,7 @@ export default function Home() {
               <div className="flex items-center justify-center">
                 <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] rounded-full overflow-hidden border-4 border-primary">
                   <Image
-                    src="/placeholder.jpg"
+                    src={`${basePath}/placeholder.jpg`}
                     alt="Volodymyr"
                     fill
                     className="object-cover"
@@ -175,7 +177,7 @@ export default function Home() {
                 <CardContent>
                   <div className="aspect-video overflow-hidden rounded-lg">
                     <Image
-                      src="/project-placeholder.svg"
+                      src={`${basePath}/project-placeholder.svg`}
                       alt="Solar Power Monitoring System"
                       width={400}
                       height={200}
@@ -204,7 +206,7 @@ export default function Home() {
                 <CardContent>
                   <div className="aspect-video overflow-hidden rounded-lg">
                     <Image
-                      src="/project-placeholder.svg"
+                      src={`${basePath}/project-placeholder.svg`}
                       alt="Smart Home Energy Management"
                       width={400}
                       height={200}
@@ -233,7 +235,7 @@ export default function Home() {
                 <CardContent>
                   <div className="aspect-video overflow-hidden rounded-lg">
                     <Image
-                      src="/project-placeholder.svg"
+                      src={`${basePath}/project-placeholder.svg`}
                       alt="Wireless Power Transfer"
                       width={400}
                       height={200}
