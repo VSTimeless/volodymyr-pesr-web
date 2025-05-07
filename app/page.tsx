@@ -87,7 +87,7 @@ export default function Home() {
               <div className="flex items-center justify-center">
                 <div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] rounded-full overflow-hidden border-4 border-primary">
                   <Image
-                    src="/placeholder.svg"
+                    src="/placeholder.jpg"
                     alt="Volodymyr"
                     fill
                     className="object-cover"
