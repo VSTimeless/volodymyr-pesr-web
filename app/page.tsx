@@ -309,40 +309,11 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Contact Information</h3>
-                  <p className="text-muted-foreground">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
-                    visions.
-                  </p>
-                </div>
-                <div className="flex flex-col space-y-2">
-                  <Button variant="outline" asChild className="justify-start">
-                    <Link href="mailto:Shchuryshyn@protonmail.com" className="flex items-center">
-                      <Mail className="mr-2 h-4 w-4" />
-                      Shchuryshyn@protonmail.com
-                    </Link>
-                  </Button>
-                  <Button variant="outline" asChild className="justify-start">
-                    <Link href="https://www.linkedin.com/in/vstimeless/" className="flex items-center">
-                      <Linkedin className="mr-2 h-4 w-4" />
-                      LinkedIn Profile
-                    </Link>
-                  </Button>
-                  <Button variant="outline" asChild className="justify-start">
-                    <Link href="https://github.com/VSTimeless" className="flex items-center">
-                      <Github className="mr-2 h-4 w-4" />
-                      GitHub Profile
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="space-y-4">
+              <div className="space-y-4 lg:col-span-2">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold">Location</h3>
                   <p className="text-muted-foreground">
-                    Based in Ukraine, available for remote work and international collaborations.
+                    Based in Vancouver, B.C., available for remote work and international collaborations.
                   </p>
                 </div>
                 <div className="space-y-2">
