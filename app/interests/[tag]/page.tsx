@@ -1,109 +1,40 @@
 import { Button } from "@/components/ui/button";
-import Image from 'next/image';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BookOpen, Headphones, Camera, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-// Mapping interest tags to their icons and descriptions
-const interestInfo = {
-  reading: {
-    icon: BookOpen,
-    title: "Reading",
-    description: "Science fiction, technical books, and biographies"
-  },
-  podcasts: {
-    icon: Headphones,
-    title: "Podcasts",
-    description: "Tech news, engineering discussions, and science podcasts"
-  },
-  photography: {
-    icon: Camera,
-    title: "Photography",
-    description: "Landscape and architectural photography"
-  }
-};
-
-// Example project data with tags
-const projects = [
-  {
-    title: "Solar Power Monitoring System",
-    description: "IoT-based solution for monitoring solar panel performance",
-    image: `${basePath}/project-placeholder.svg`,
-    tags: ["renewable", "iot", "reading"],
-    badges: ["Arduino", "IoT", "Renewable Energy"],
-    link: "#"
-  },
-  {
-    title: "Smart Home Energy Management",
-    description: "System for optimizing home energy consumption",
-    image: `${basePath}/project-placeholder.svg`,
-    tags: ["tech", "podcasts"],
-    badges: ["Raspberry Pi", "Python", "Machine Learning"],
-    link: "#"
-  },
-  {
-    title: "Wireless Power Transfer",
-    description: "Experimental setup for wireless energy transmission",
-    image: `${basePath}/project-placeholder.svg`,
-    tags: ["photography", "landscape"],
-    badges: ["Circuit Design", "Electromagnetics", "Power Electronics"],
-    link: "#"
-  },
-  {
-    title: "Technical Book Review Blog",
-    description: "Personal blog reviewing technical books in electrical engineering",
-    image: `${basePath}/project-placeholder.svg`,
-    tags: ["reading", "tech"],
-    badges: ["Web Development", "Technical Writing", "Book Reviews"],
-    link: "#"
-  },
-  {
-    title: "Engineering Podcast Analysis",
-    description: "Analysis of key themes across popular engineering podcasts",
-    image: `${basePath}/project-placeholder.svg`,
-    tags: ["podcasts", "tech"],
-    badges: ["Data Analysis", "Content Creation", "Audio Processing"],
-    link: "#"
-  },
-  {
-    title: "Urban Architecture Photography Portfolio",
-    description: "Collection of architectural photos from around Vancouver",
-    image: `${basePath}/project-placeholder.svg`,
-    tags: ["photography", "urban"],
-    badges: ["Photography", "Urban Design", "Visual Arts"],
-    link: "#"
-  }
-];
+import { ArrowLeft } from "lucide-react";
+import { ProjectCard } from "@/components/project-card";
+import { interests } from "@/data/interests";
+import { projects } from "@/data/projects";
 
 // Generate all possible tag values at build time for static export
 export function generateStaticParams() {
-  return [
-    { tag: 'reading' },
-    { tag: 'podcasts' },
-    { tag: 'photography' }
-  ];
+  return Object.keys(interests).map(tag => ({ tag }));
 }
 
 // This is a static component for output: export
 export default function InterestTagPage({ params }: { params: { tag: string } }) {
   const { tag } = params;
   
-  // Get interest info or fallback to default
-  const interest = interestInfo[tag as keyof typeof interestInfo] || {
-    icon: ArrowRight,
-    title: tag,
-    description: "Projects related to this interest"
-  };
-  
-  const Icon = interest.icon;
+  // Get interest info
+  const interest = interests[tag as keyof typeof interests];
   
   // Filter projects by tag
   const filteredProjects = projects.filter(project =>
     project.tags.includes(tag.toLowerCase())
   );
+
+  // If interest not found, redirect
+  if (!interest) {
+    return (
+      <div className="container mx-auto py-12 text-center">
+        <p className="text-muted-foreground mb-4">Interest not found.</p>
+        <Button asChild>
+          <Link href="/#interests">Back to All Interests</Link>
+        </Button>
+      </div>
+    );
+  }
+
+  const Icon = interest.icon;
 
   return (
     <div className="container mx-auto py-12">
@@ -130,35 +61,7 @@ export default function InterestTagPage({ params }: { params: { tag: string } })
       ) : (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, idx) => (
-            <Card key={idx}>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="aspect-video overflow-hidden rounded-lg">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={400}
-                    height={200}
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.badges.map((badge, i) => (
-                    <Badge key={i} variant="outline">{badge}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button variant="outline" className="w-full" asChild>
-                  <Link href={project.link} className="flex items-center justify-center">
-                    View Project <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
+            <ProjectCard key={idx} project={project} />
           ))}
         </div>
       )}

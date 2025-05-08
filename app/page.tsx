@@ -1,9 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { BookOpen, Headphones, Camera, Zap, Github, Linkedin, Mail, ArrowRight } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
+import { ProjectCard } from "@/components/project-card"
+import { InterestCard } from "@/components/interest-card"
+import { projects } from "@/data/projects"
+import { interests } from "@/data/interests"
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -165,93 +168,9 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Solar Power Monitoring System</CardTitle>
-                  <CardDescription>IoT-based solution for monitoring solar panel performance</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="aspect-video overflow-hidden rounded-lg">
-                    <Image
-                      src={`${basePath}/project-placeholder.svg`}
-                      alt="Solar Power Monitoring System"
-                      width={400}
-                      height={200}
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <Badge variant="outline">Arduino</Badge>
-                    <Badge variant="outline">IoT</Badge>
-                    <Badge variant="outline">Renewable Energy</Badge>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="#" className="flex items-center justify-center">
-                      View Project <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Smart Home Energy Management</CardTitle>
-                  <CardDescription>System for optimizing home energy consumption</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="aspect-video overflow-hidden rounded-lg">
-                    <Image
-                      src={`${basePath}/project-placeholder.svg`}
-                      alt="Smart Home Energy Management"
-                      width={400}
-                      height={200}
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <Badge variant="outline">Raspberry Pi</Badge>
-                    <Badge variant="outline">Python</Badge>
-                    <Badge variant="outline">Machine Learning</Badge>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="#" className="flex items-center justify-center">
-                      View Project <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Wireless Power Transfer</CardTitle>
-                  <CardDescription>Experimental setup for wireless energy transmission</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="aspect-video overflow-hidden rounded-lg">
-                    <Image
-                      src={`${basePath}/project-placeholder.svg`}
-                      alt="Wireless Power Transfer"
-                      width={400}
-                      height={200}
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <Badge variant="outline">Circuit Design</Badge>
-                    <Badge variant="outline">Electromagnetics</Badge>
-                    <Badge variant="outline">Power Electronics</Badge>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="#" className="flex items-center justify-center">
-                      View Project <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+              {projects.slice(0, 3).map((project, idx) => (
+                <ProjectCard key={idx} project={project} />
+              ))}
             </div>
           </div>
         </section>
@@ -268,33 +187,9 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-3">
-              <Link href="/interests/reading" className="block rounded-lg transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                <Card>
-                  <CardHeader>
-                    <BookOpen className="h-8 w-8 mb-2" />
-                    <CardTitle>Reading</CardTitle>
-                    <CardDescription>Science fiction, technical books, and biographies</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-              <Link href="/interests/podcasts" className="block rounded-lg transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                <Card>
-                  <CardHeader>
-                    <Headphones className="h-8 w-8 mb-2" />
-                    <CardTitle>Podcasts</CardTitle>
-                    <CardDescription>Tech news, engineering discussions, and science podcasts</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
-              <Link href="/interests/photography" className="block rounded-lg transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                <Card>
-                  <CardHeader>
-                    <Camera className="h-8 w-8 mb-2" />
-                    <CardTitle>Photography</CardTitle>
-                    <CardDescription>Landscape and architectural photography</CardDescription>
-                  </CardHeader>
-                </Card>
-              </Link>
+              {Object.values(interests).map((interest, idx) => (
+                <InterestCard key={idx} interest={interest} />
+              ))}
             </div>
           </div>
         </section>
