@@ -78,7 +78,16 @@ const projects = [
   }
 ];
 
-// This is a server component
+// Generate all possible tag values at build time for static export
+export function generateStaticParams() {
+  return [
+    { tag: 'reading' },
+    { tag: 'podcasts' },
+    { tag: 'photography' }
+  ];
+}
+
+// This is a static component for output: export
 export default function InterestTagPage({ params }: { params: { tag: string } }) {
   const { tag } = params;
   
