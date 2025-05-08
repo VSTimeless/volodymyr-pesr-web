@@ -266,39 +266,33 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <BookOpen className="h-8 w-8 mb-2" />
-                  <CardTitle>Reading</CardTitle>
-                  <CardDescription>Science fiction, technical books, and biographies</CardDescription>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <a href="/interests/reading" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#reading</a>
-                    <a href="/interests/science-fiction" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#science-fiction</a>
-                  </div>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Headphones className="h-8 w-8 mb-2" />
-                  <CardTitle>Podcasts</CardTitle>
-                  <CardDescription>Tech news, engineering discussions, and science podcasts</CardDescription>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <a href="/interests/podcasts" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#podcasts</a>
-                    <a href="/interests/tech" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#tech</a>
-                  </div>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Camera className="h-8 w-8 mb-2" />
-                  <CardTitle>Photography</CardTitle>
-                  <CardDescription>Landscape and architectural photography</CardDescription>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    <a href="/interests/photography" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#photography</a>
-                    <a href="/interests/landscape" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#landscape</a>
-                  </div>
-                </CardHeader>
-              </Card>
+              <a href="/interests/reading" className="rounded-lg border bg-card text-card-foreground shadow-sm transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                <Card>
+                  <CardHeader>
+                    <BookOpen className="h-8 w-8 mb-2" />
+                    <CardTitle>Reading</CardTitle>
+                    <CardDescription>Science fiction, technical books, and biographies</CardDescription>
+                  </CardHeader>
+                </Card>
+              </a>
+              <a href="/interests/podcasts" className="rounded-lg border bg-card text-card-foreground shadow-sm transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                <Card>
+                  <CardHeader>
+                    <Headphones className="h-8 w-8 mb-2" />
+                    <CardTitle>Podcasts</CardTitle>
+                    <CardDescription>Tech news, engineering discussions, and science podcasts</CardDescription>
+                  </CardHeader>
+                </Card>
+              </a>
+              <a href="/interests/photography" className="rounded-lg border bg-card text-card-foreground shadow-sm transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+                <Card>
+                  <CardHeader>
+                    <Camera className="h-8 w-8 mb-2" />
+                    <CardTitle>Photography</CardTitle>
+                    <CardDescription>Landscape and architectural photography</CardDescription>
+                  </CardHeader>
+                </Card>
+              </a>
             </div>
           </div>
         </section>
