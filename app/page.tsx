@@ -35,12 +35,6 @@ export default function Home() {
               >
                 Interests
               </Link>
-              <Link
-                href="#contact"
-                className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Contact
-              </Link>
             </nav>
           </div>
           <div className="flex flex-1 items-center justify-end space-x-4">
