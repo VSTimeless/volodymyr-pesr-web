@@ -277,6 +277,10 @@ export default function Home() {
                   <BookOpen className="h-8 w-8 mb-2" />
                   <CardTitle>Reading</CardTitle>
                   <CardDescription>Science fiction, technical books, and biographies</CardDescription>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <a href="/interests/reading" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#reading</a>
+                    <a href="/interests/science-fiction" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#science-fiction</a>
+                  </div>
                 </CardHeader>
               </Card>
               <Card>
@@ -284,6 +288,10 @@ export default function Home() {
                   <Headphones className="h-8 w-8 mb-2" />
                   <CardTitle>Podcasts</CardTitle>
                   <CardDescription>Tech news, engineering discussions, and science podcasts</CardDescription>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <a href="/interests/podcasts" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#podcasts</a>
+                    <a href="/interests/tech" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#tech</a>
+                  </div>
                 </CardHeader>
               </Card>
               <Card>
@@ -291,6 +299,10 @@ export default function Home() {
                   <Camera className="h-8 w-8 mb-2" />
                   <CardTitle>Photography</CardTitle>
                   <CardDescription>Landscape and architectural photography</CardDescription>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <a href="/interests/photography" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#photography</a>
+                    <a href="/interests/landscape" className="inline-block rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition">#landscape</a>
+                  </div>
                 </CardHeader>
               </Card>
             </div>
