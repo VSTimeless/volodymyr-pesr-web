@@ -14,11 +14,11 @@ export function InterestCard({ interest }: InterestCardProps) {
       href={`/interests/${interest.slug}`} 
       className="block rounded-lg transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
     >
-      <Card className="h-full flex flex-col">
-        <CardHeader className="flex-1 flex flex-col items-center text-center">
-          <Icon className="h-8 w-8 mb-2" />
-          <CardTitle>{interest.title}</CardTitle>
-          <CardDescription className="line-clamp-2">{interest.description}</CardDescription>
+      <Card className="h-[200px] flex flex-col">
+        <CardHeader className="flex-1 flex flex-col items-center text-center justify-center">
+          <Icon className="h-8 w-8 mb-2 flex-shrink-0" />
+          <CardTitle className="flex-shrink-0">{interest.title}</CardTitle>
+          <CardDescription className="line-clamp-2 overflow-hidden">{interest.description}</CardDescription>
         </CardHeader>
       </Card>
     </Link>
