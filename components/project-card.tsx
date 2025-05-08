@@ -12,10 +12,10 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="h-[450px] flex flex-col">
+    <Card className="h-[480px] flex flex-col">
       <CardHeader className="flex-none">
         <CardTitle className="line-clamp-1 overflow-hidden">{project.title}</CardTitle>
-        <CardDescription className="line-clamp-2 overflow-hidden min-h-[40px]">{project.description}</CardDescription>
+        <CardDescription className="line-clamp-2 overflow-hidden min-h-[48px]">{project.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col">
         <div className="aspect-video overflow-hidden rounded-lg mb-4 flex-none">
