@@ -268,7 +268,7 @@ export default function Home() {
               </div>
             </div>
             <div className="grid grid-cols-1 gap-6 pt-12 md:grid-cols-3">
-              <a href="/interests/reading" className="rounded-lg border bg-card text-card-foreground shadow-sm transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+              <Link href="/interests/reading" className="block rounded-lg transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
                 <Card>
                   <CardHeader>
                     <BookOpen className="h-8 w-8 mb-2" />
@@ -276,8 +276,8 @@ export default function Home() {
                     <CardDescription>Science fiction, technical books, and biographies</CardDescription>
                   </CardHeader>
                 </Card>
-              </a>
-              <a href="/interests/podcasts" className="rounded-lg border bg-card text-card-foreground shadow-sm transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+              </Link>
+              <Link href="/interests/podcasts" className="block rounded-lg transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
                 <Card>
                   <CardHeader>
                     <Headphones className="h-8 w-8 mb-2" />
@@ -285,8 +285,8 @@ export default function Home() {
                     <CardDescription>Tech news, engineering discussions, and science podcasts</CardDescription>
                   </CardHeader>
                 </Card>
-              </a>
-              <a href="/interests/photography" className="rounded-lg border bg-card text-card-foreground shadow-sm transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+              </Link>
+              <Link href="/interests/photography" className="block rounded-lg transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
                 <Card>
                   <CardHeader>
                     <Camera className="h-8 w-8 mb-2" />
@@ -294,7 +294,7 @@ export default function Home() {
                     <CardDescription>Landscape and architectural photography</CardDescription>
                   </CardHeader>
                 </Card>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
