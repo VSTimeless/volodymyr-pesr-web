@@ -45,17 +45,17 @@ export default function Home() {
           </div>
           <div className="flex flex-1 items-center justify-end space-x-4">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://github.com" aria-label="GitHub">
+              <Link href="https://github.com/VSTimeless" aria-label="GitHub">
                 <Github className="h-4 w-4" />
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://linkedin.com" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/in/vstimeless/" aria-label="LinkedIn">
                 <Linkedin className="h-4 w-4" />
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:volodymyr@example.com" aria-label="Email">
+              <Link href="mailto:Shchuryshyn@protonmail.com" aria-label="Email">
                 <Mail className="h-4 w-4" />
               </Link>
             </Button>
@@ -319,19 +319,19 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col space-y-2">
                   <Button variant="outline" asChild className="justify-start">
-                    <Link href="mailto:volodymyr@example.com" className="flex items-center">
+                    <Link href="mailto:Shchuryshyn@protonmail.com" className="flex items-center">
                       <Mail className="mr-2 h-4 w-4" />
-                      volodymyr@example.com
+                      Shchuryshyn@protonmail.com
                     </Link>
                   </Button>
                   <Button variant="outline" asChild className="justify-start">
-                    <Link href="https://linkedin.com" className="flex items-center">
+                    <Link href="https://www.linkedin.com/in/vstimeless/" className="flex items-center">
                       <Linkedin className="mr-2 h-4 w-4" />
                       LinkedIn Profile
                     </Link>
                   </Button>
                   <Button variant="outline" asChild className="justify-start">
-                    <Link href="https://github.com" className="flex items-center">
+                    <Link href="https://github.com/VSTimeless" className="flex items-center">
                       <Github className="mr-2 h-4 w-4" />
                       GitHub Profile
                     </Link>
@@ -363,7 +363,7 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built with Next.js and Tailwind CSS. The source code is available on{" "}
-            <Link href="https://github.com" className="font-medium underline underline-offset-4">
+            <Link href="https://github.com/VSTimeless" className="font-medium underline underline-offset-4">
               GitHub
             </Link>
             .
